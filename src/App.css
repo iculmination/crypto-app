@@ -299,9 +299,10 @@ a:hover {
   width: 70%;
 }
 
-.news-image-container .img {
+.news-image-container img {
   width: 100px;
   height: 100px;
+  object-fit: cover;
 }
 .news-card p {
   color: black;
