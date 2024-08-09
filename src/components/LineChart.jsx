@@ -13,7 +13,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinPrice.push(coinHistory.data.history[i].price);
     coinTimestamp.push(
-      new Date(coinHistory.data.history[i].timestamp).toLocaleDateString()
+      new Date(
+        coinHistory.data.history[i].timestamp * 1000
+      ).toLocaleDateString()
     );
   }
 
@@ -30,7 +32,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     ],
   };
 
-  const options = { scales: { y: { beginAtZero: true } } };
+  const options = { scales: { y: { beginAtZero: false } } };
 
   return (
     <>

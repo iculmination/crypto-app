@@ -3,6 +3,7 @@ import { Select, Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import Loader from "./Loader";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -16,7 +17,7 @@ const News = ({ simplified = false }) => {
     count: simplified ? 6 : 24,
   });
 
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Loader />;
 
   console.log(cryptoNews.data[0].date);
 
